@@ -29,7 +29,7 @@ The C++ project creation script creates a CMake based C++ project, complete
 with Catch2 and CTest integration for performing unit testing. The directory
 structure created is as follows:
 ```console
-tree test
+foo@bar:~$ tree test
 test
 ├── bin
 ├── build
@@ -44,3 +44,13 @@ test
     └── src
         └── main_test.cpp
 ```
+To build the project, navigate to the empty build directory and run the
+following command:
+```console
+foo@bar:~$ cmake .. -DCMAKE_BUILD_TYPE=Debug -DTESTS_ON=1
+foo@bar:~$ make
+```
+This invokes CMake, telling it to construct a debug build system and to add
+the unit tests configured in the tests directory. The build type can be toggled
+at the command line.
+
