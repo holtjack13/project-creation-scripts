@@ -26,8 +26,18 @@ function create_python_project()
 
 ### Create C++ Project
 The C++ project creation script creates a CMake based C++ project, complete
-with Catch2 and CTest integration for performing unit testing. The directory
-structure created is as follows:
+with Catch2 and CTest integration for performing unit testing. The script
+takes a single argument, the project name. If you've added the functions
+described above, run the following in your terminal:
+```console
+foo@bar:~$ create_c++_project <project-name>
+```
+If not, run the following instead
+```console
+foo@bar:~$ <script-location>/create_c++_project.sh <project-name>
+```
+
+The project structure created by the script is as follows:
 ```console
 foo@bar:~$ tree test
 test
@@ -45,12 +55,16 @@ test
         └── main_test.cpp
 ```
 To build the project, navigate to the empty build directory and run the
-following command:
+following commands:
 ```console
 foo@bar:~$ cmake .. -DCMAKE_BUILD_TYPE=Debug -DTESTS_ON=1
 foo@bar:~$ make
 ```
-This invokes CMake, telling it to construct a debug build system and to add
-the unit tests configured in the tests directory. The build type can be toggled
-at the command line.
+The first command invokes CMake, telling it to generate a debug build system 
+for the project, and for the unit test subproject in the tests directory. 
+Both the build type and whether the test subproject is rebuilt can be toggled at 
+the command line.
+
+The second command produces the project executables, storing them in their
+respective `bin` directories.
 
