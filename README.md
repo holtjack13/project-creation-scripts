@@ -8,7 +8,7 @@ would navigate to `.bashrc` in the home directory and add the following:
 PROJECT_TEMPLATE_SCRIPTS=<your-location-here>
 export PROJECT_TEMPLATE_SCRIPTS
 ```
-For convienient running of the scripts wherever you are, simply add
+For convenient running of the scripts wherever you are, simply add
 the following functions to your shell configuration file:
 ```bash
 function create_c++_project()
